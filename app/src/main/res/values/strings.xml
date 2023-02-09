@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">AndroidProject_HIT</string>
+    <string name="trainig_level">Trainig Level</string>
+    <string name="muscle_group">Back</string>
+
+    <string name="aerobic_exercises">Running</string>
+    <string name="Description_Of_AerobicEx_txt">While jogging, maintain good posture, engage your core, and gaze forward</string>
+
+    <string name="anaerobic_exercises">Bent over rows</string>
+    <string name="Description_Of_AnaerobicEx_txt">Lift the bar from the rack, bend forward at the hips, and keep the back straight with a slight bend in the knees. 
+        Lower the bar towards the floor until the elbows are completely straight, and keep the back flat as the bar is pulled towards the belly button. 
+        Then slowly lower the bar to the starting position and repeat.</string>
+
+    <string-array name="sex">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="training_level">
+        <item>Basic</item>
+        <item>Advanced</item>
+        <item>Expert</item>
+    </string-array>
+
+    <string-array name="time">
+        <item>Morning: 06:00 – 12:00</item>
+        <item>Noon: 12:00 – 18:00</item>
+        <item>Evening: 18:00 – 00:00</item>
+    </string-array>
+
+    <string-array name="muscle_group">
+        <item>Back</item>
+        <item>Arms</item>
+        <item>Chest</item>
+        <item>Abs</item>
+        <item>Legs</item>
+    </string-array>
+
+    <string-array name="aerobic_exercises">
+        <item>Running</item>
+        <item>Cycling</item>
+        <item>Jumping rope</item>
+        <item>Stair climb</item>
+        <item>Burpees</item>
+    </string-array>
+
+    <string-array name="Description_Of_AerobicEx_txt">
+        <item>While jogging, maintain good posture, engage your core, and gaze forward.</item>
+        <item>Breathe from your belly and keep your back straight. This will engage your abdominal muscles. 
+            (If you don\'t have a bicycle a home, you can do "bicycle crunches" as shown in the illustration.)</item>
+        <item>Make sure there is always a slight bend in your knees and that you are landing softly on the balls of your feet every jump. 
+            This will ensure the stresses from jumping are nicely dissipated through your body.</item>
+        <item>To get blood flowing in your legs, climb the stairs slowly, keeping your shoulders back and looking straight ahead, then walk down. Repeat three more times. 
+            Next, run up the stairs, then walk down. On the descent, put most of your weight on your heels so that your glutes (rather than your knees) absorb the impact.</item>
+        <item>Lower into a squat position and place your hands on the floor. Kick or step your legs back into a plank position. 
+            Jump or step your legs forward to return to a squat position. Return to the standing position..</item>
+    </string-array>
+
+
+    <string-array name="anaerobic_exercises">
+        <item>Bent over rows</item>
+        <item>Bicep curls</item>
+        <item>dumle pullover</item>
+        <item>Crunches</item>
+        <item>Squats</item>
+    </string-array>
+
+    <string-array name="Description_Of_AnaerobicEx_txt">
+        <item>Lift the bar from the rack, bend forward at the hips, and keep the back straight with a slight bend in the knees. 
+            Lower the bar towards the floor until the elbows are completely straight, and keep the back flat as the bar is pulled towards the belly button. Then slowly lower the bar to the starting position and repeat.</item>
+        <item>Stand straight with a dumbbell in each hand, your feet shoulder-width apart, and hands by your sides. Squeeze the biceps and lift the dumbbells. 
+            Keep the elbows close to your body and the upper arms stationary, only the forearms should move. 
+            Once the dumbbells are at shoulder level, slowly lower the arms to the starting position.</item>
+        <item>Grab a dumbbell (or at least one liter full water bottle) and stand straight with your feet shoulder-width apart. 
+            Raise your arms and, with your elbows pointing forward, start lowering the dumbbell. Slowly raise the dumbbell to the starting position and squeeze the triceps.</item>
+        <item>Lie down on the mat, keep your knees bent, your back and feet flat, and your hands supporting your head. 
+            Lift your shoulders, squeeze your abdominal muscles and hold for 1 to 2 seconds. Slowly return to the starting position and repeat until set is complete.</item>
+        <item>Stand straight with your feet shoulder-width apart. Press your hips back and squat. Stand up and repeat this movement until the set is complete.</item>
+    </string-array>
+
+
+</resources>

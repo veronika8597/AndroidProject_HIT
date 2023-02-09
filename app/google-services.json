@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "304867126000",
+    "firebase_url": "https://gymshark-fa315-default-rtdb.firebaseio.com",
+    "project_id": "gymshark-fa315",
+    "storage_bucket": "gymshark-fa315.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304867126000:android:8b45e353f8d448784f7035",
+        "android_client_info": {
+          "package_name": "com.example.androidproject_hit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304867126000-7s1oumesd2t654nngvo110sse2phtog6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH63kdmahvYZYJ3anE_mNSe4EWppodZUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304867126000-7s1oumesd2t654nngvo110sse2phtog6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
