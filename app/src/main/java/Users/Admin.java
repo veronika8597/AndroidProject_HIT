@@ -6,17 +6,17 @@ public class Admin {
     private String email;
     private String f_name;
     private String l_name;
-    private String phone;
     private String password;
+    int isAdmin;
     private String token;
 
-    public Admin(String email, String f_name, String l_name, String phone, String password, String token) {
+    public Admin(String email, String f_name, String l_name, String password, String token, int isAdmin) {
         this.email = email;
         this.f_name = f_name;
         this.l_name = l_name;
-        this.phone = phone;
         this.password = password;
         this.token = token;
+        this.isAdmin = isAdmin;
     }
 
     public String getEmail() {
@@ -43,14 +43,6 @@ public class Admin {
         this.l_name = l_name;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -59,7 +51,19 @@ public class Admin {
         this.password = password;
     }
 
-    public Boolean getToken() {
-        return Objects.equals(this.token, "Admin123");
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = "Admin123";
+    }
+
+    public int getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(int isAdmin) {
+        this.isAdmin = 1;
     }
 }

@@ -10,8 +10,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="341dp"
-        android:layout_height="432dp"
+        android:layout_width="332dp"
+        android:layout_height="390dp"
         app:cardBackgroundColor="#91FFFFFF"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.591">
 
         <LinearLayout
-            android:layout_width="339dp"
+            android:layout_width="329dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
@@ -63,21 +63,9 @@
                 android:inputType="textPassword"
                 android:minHeight="48dp" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="Token" />
-
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"/>
+                android:layout_width="325dp"
+                android:layout_height="wrap_content">
 
                 <Button
                     android:id="@+id/AdminLogin_Button"
@@ -97,6 +85,16 @@
                     android:visibility="visible" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/AdminReg_ClickableTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/comfortaa_light"
+                android:text="Admin Register"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -104,11 +102,11 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="409dp"
-        android:layout_height="222dp"
+        android:layout_height="250dp"
         android:alpha="0.8"
         app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"

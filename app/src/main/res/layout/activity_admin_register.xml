@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/registerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/activity_admin_register"
     android:background="@drawable/gradient_list"
-    tools:context=".RegisterActivity">
+    tools:context=".AdminRegisterActivity">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -21,8 +21,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="381dp"
-        android:layout_height="594dp"
+        android:layout_width="380dp"
+        android:layout_height="574dp"
         app:cardBackgroundColor="#91FFFFFF"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,129 +32,124 @@
         app:layout_constraintVertical_bias="0.19">
 
         <LinearLayout
-            android:layout_width="366dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/Reg_Fname"
-                android:layout_width="349dp"
+            <TextView
+                android:id="@+id/Fname_textView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:ems="10"
-                android:hint="First Name"
-                android:inputType="textPersonName" />
+                android:fontFamily="@font/comfortaa_light"
+                android:text="First Name"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/Reg_Lname"
+                android:id="@+id/AdminReg_Fname_TextInput"
+                android:layout_width="364dp"
+                android:layout_height="55dp"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Lname_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/comfortaa_light"
+                android:text="Last Name"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/AdminReg_Lname_TextInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:ems="10"
-                android:hint="Last Name"
                 android:inputType="textPersonName" />
 
 
+            <TextView
+                android:id="@+id/Email_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/comfortaa_light"
+                android:text="E-mail"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <EditText
-                android:id="@+id/Reg_email"
+                android:id="@+id/AdminReg_email_TextInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:ems="10"
-                android:hint="E-Mail"
                 android:inputType="textEmailAddress" />
 
 
+            <TextView
+                android:id="@+id/Token_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/comfortaa_light"
+                android:text="Token"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <EditText
-                android:id="@+id/Reg_phone"
+                android:id="@+id/AdminReg_token_TextInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:ems="10"
-                android:hint="Phone"
-                android:inputType="phone" />
-
-
-            <EditText
-                android:id="@+id/Reg_age"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:ems="10"
-                android:hint="Age"
-                android:inputType="numberDecimal" />
-
-            <Spinner
-                android:id="@+id/spinnerSex"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:entries="@array/sex"
-                android:minHeight="48dp" />
-
-            <EditText
-                android:id="@+id/Reg_weight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:ems="10"
-                android:hint="Weight"
-                android:inputType="numberSigned"
-                android:minHeight="48dp" />
-
-            <EditText
-                android:id="@+id/Reg_height"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:ems="10"
-                android:hint="Height"
-                android:inputType="numberSigned" />
-
-            <EditText
-                android:id="@+id/Reg_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:ems="10"
-                android:hint="Password"
                 android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/Password_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/comfortaa_light"
+                android:text="Password"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/AdminReg_password_TextInput"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/Reg_TermsOfService"
-        android:layout_width="358dp"
-        android:layout_height="52dp"
-        android:fontFamily="@font/comfortaa_light"
-        android:text="By selecting Agree and continue, I agree to GYMSHARK's Terms of Service and acknowledge the Privacy Policy. "
-        android:textAlignment="viewStart"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/Reg_AgreeAndContinue"
-        app:layout_constraintEnd_toEndOf="@+id/Reg_AgreeAndContinue"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="@+id/Reg_AgreeAndContinue"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2"
-        app:layout_constraintVertical_bias="0.482" />
-
     <Button
-        android:id="@+id/Reg_AgreeAndContinue"
+        android:id="@+id/AdminReg_RegisterButton"
         android:layout_width="338dp"
         android:layout_height="40dp"
         android:background="@drawable/login_button"
         android:fontFamily="@font/comfortaa_light"
-        android:onClick="ButtonAgreeAndContinue"
-        android:text="Agree and Continue"
+        android:onClick="ButtonRegister"
+        android:text="Register"
         android:textColor="#EFEFEF"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2"
-        app:layout_constraintVertical_bias="0.746" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

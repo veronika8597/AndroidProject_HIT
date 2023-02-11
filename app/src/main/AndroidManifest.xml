@@ -15,6 +15,12 @@
         android:theme="@style/Theme.AndroidProject_HIT"
         tools:targetApi="31">
         <activity
+            android:name=".AdminMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminRegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".TrainingType"
             android:exported="false" />
         <activity

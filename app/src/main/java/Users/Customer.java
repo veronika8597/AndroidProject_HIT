@@ -10,8 +10,12 @@ public class Customer {
     private String weight;
     private String height;
     private String sex;
+    private int isAdmin;
 
-    public Customer(String email, String f_name, String l_name, String phone, String age, String weight, String height, String sex) {
+    public Customer() {
+    }
+
+    public Customer(String email, String f_name, String l_name, String phone, String age, String weight, String height, String sex, int isAdmin) {
         this.email = email;
         this.f_name = f_name;
         this.l_name = l_name;
@@ -20,6 +24,7 @@ public class Customer {
         this.weight = weight;
         this.height = height;
         this.sex = sex;
+        this.isAdmin = isAdmin;
     }
 
     public String getEmail() {
@@ -78,11 +83,15 @@ public class Customer {
         this.height = height;
     }
 
-    public String isSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public int getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(int isAdmin) {
+        this.isAdmin = 0;
     }
 }

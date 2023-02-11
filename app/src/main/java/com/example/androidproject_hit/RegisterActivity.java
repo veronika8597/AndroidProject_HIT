@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        ConstraintLayout constraintLayout = findViewById(R.id.registerTwoLayout);
+        ConstraintLayout constraintLayout = findViewById(R.id.registerLayout);
 
         AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
         animationDrawable.setEnterFadeDuration(2500);
@@ -159,7 +159,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 FirebaseDatabase database = FirebaseDatabase.getInstance(); // מביא את החיבור לfirebase
                                 DatabaseReference myRef = database.getReference("Customer").child(uid);
 
-                                Customer customer = new Customer(email,firstName,lastName,phone,age,weight,height,sex);
+                                Customer customer = new Customer(email,firstName,lastName,phone,age,weight,height,sex,0);
                                 myRef.setValue(customer);
                                 Toast.makeText(RegisterActivity.this, "Register Success.",
                                         Toast.LENGTH_SHORT).show();
@@ -169,12 +169,14 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.makeText(RegisterActivity.this, "Register failed.",
                                         Toast.LENGTH_SHORT).show();
                             }
-                        }
-                    });
 
+                        }
+
+                    });
 
         }
 
         return view;
     }
+
 }

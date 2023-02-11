@@ -5,22 +5,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.androidproject_hit.AdminMainActivity;
+import com.example.androidproject_hit.AdminRegisterActivity;
 import com.example.androidproject_hit.R;
+import com.example.androidproject_hit.RegisterActivity;
 import com.example.androidproject_hit.TrainingType;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import Users.Admin;
 
 public class AdminLoginActivity extends AppCompatActivity {
 
@@ -45,11 +57,37 @@ public class AdminLoginActivity extends AppCompatActivity {
         animationDrawable.setExitFadeDuration(5000);
         animationDrawable.start();
 
+        /// First clickable span
+        SpannableString ss1 = new SpannableString("Admin Register");
+
+        ClickableSpan clickableSpan1 = new ClickableSpan() {
+            @Override
+            public void onClick(View textView1) {
+                Intent intent1 = new Intent(AdminLoginActivity.this, AdminRegisterActivity.class);
+                startActivity(intent1);
+            }
+
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setUnderlineText(false);
+            }
+        };
+
+        ss1.setSpan(clickableSpan1, 6, 14, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        TextView textView = (TextView) findViewById(R.id.AdminReg_ClickableTextView);
+        textView.setText(ss1);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+
+        textView.setHighlightColor(Color.TRANSPARENT);
+
+        ///Admin Login
         AdminLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-/*                Intent intent = new Intent(AdminLoginActivity.this, .class);
-                startActivity(intent);*/
+                Intent intent = new Intent(AdminLoginActivity.this, AdminMainActivity.class);
+
+                startActivity(intent);
             }
         });
     }
