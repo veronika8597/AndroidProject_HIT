@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MuscleGroupListUI.AnaerobicExerciseActivity">
+    tools:context=".MuscleGroupListUI.AnaerobicExerciseActivity"
+    android:id="@+id/exercisePage2">
 
     <View
         android:id="@+id/view1"

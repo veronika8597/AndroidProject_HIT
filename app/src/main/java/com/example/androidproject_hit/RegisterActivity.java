@@ -111,15 +111,15 @@ public class RegisterActivity extends AppCompatActivity {
 
     public View ButtonAgreeAndContinue (View view) {
 
-        final String email = String.valueOf(rEmail.getText().toString());
-        final String password = String.valueOf(rPassword.getText().toString());
-        final String firstName = String.valueOf(rFname.getText().toString());
-        final String lastName = String.valueOf(rLname.getText().toString());
-        final String phone = String.valueOf(rPhone.getText()).toString();
-        final String age = String.valueOf(rAge.getText()).toString();
-        final String weight = String.valueOf(rWeight.getText().toString());
-        final String height = String.valueOf(rHeight.getText().toString());
-        final String sex = String.valueOf(rSex.getSelectedItem().toString());
+        final String email = rEmail.getText().toString();
+        final String password = rPassword.getText().toString();
+        final String firstName = rFname.getText().toString();
+        final String lastName = rLname.getText().toString();
+        final String phone = rPhone.getText().toString();
+        final String age = rAge.getText().toString();
+        final String weight = rWeight.getText().toString();
+        final String height = rHeight.getText().toString();
+        final String sex = rSex.getSelectedItem().toString();
 
 
         if (TextUtils.isEmpty(email)){
@@ -163,7 +163,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 myRef.setValue(customer);
                                 Toast.makeText(RegisterActivity.this, "Register Success.",
                                         Toast.LENGTH_SHORT).show();
-//                                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
 
                             } else {
                                 // If sign in fails, display a message to the user.
@@ -173,17 +172,9 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     });
 
+
         }
 
         return view;
     }
-
-/*    public void loadSecondFragment() {
-
-        RegisterTwoFragment fragmentTwo = new RegisterTwoFragment();
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.registerTwoLayout, fragmentTwo);
-        transaction.commit();
-    }*/
-
 }

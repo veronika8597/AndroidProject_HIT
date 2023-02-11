@@ -2,65 +2,127 @@ package com.example.androidproject_hit.MuscleGroupListUI.TimerFragments2;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.androidproject_hit.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ThreeMinFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class ThreeMinFragment extends Fragment {
+import java.util.Locale;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+public class ThreeMinFragment extends Fragment implements View.OnClickListener {
 
     public ThreeMinFragment() {
-        // Required empty public constructor
+    }
+    private static final long START_TIME_IN_MILLIS = 60000;
+
+    private TextView mTextViewCountDown;
+    private Button mButtonStartPause;
+    private Button mButtonReset;
+
+    private CountDownTimer mCountDownTimer;
+
+    private boolean mTimerRunning;
+    View layoutView;
+
+    private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        layoutView  = inflater.inflate(R.layout.fragment_three_min, container, false);
+
+
+        mTextViewCountDown = layoutView .findViewById(R.id.textViewCount);
+
+        mButtonStartPause = layoutView .findViewById(R.id.button_start_pause);
+        mButtonReset = layoutView .findViewById(R.id.button_reset);
+
+        mButtonStartPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mTimerRunning) {
+                    pauseTimer();
+                } else {
+                    startTimer();
+                }
+            }
+        });
+
+        mButtonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetTimer();
+            }
+        });
+
+        updateCountDownText();
+        return layoutView ;
+    }
+    private void startTimer() {
+        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                mTimeLeftInMillis = millisUntilFinished;
+                updateCountDownText();
+            }
+
+            @Override
+            public void onFinish() {
+                mTimerRunning = false;
+                mButtonStartPause.setText("Start");
+                mButtonStartPause.setVisibility(View.INVISIBLE);
+                mButtonReset.setVisibility(View.VISIBLE);
+            }
+        }.start();
+
+        mTimerRunning = true;
+        mButtonStartPause.setText("pause");
+        mButtonReset.setVisibility(View.INVISIBLE);
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ThreeMinFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ThreeMinFragment newInstance(String param1, String param2) {
-        ThreeMinFragment fragment = new ThreeMinFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    private void pauseTimer() {
+        mCountDownTimer.cancel();
+        mTimerRunning = false;
+        mButtonStartPause.setText("Start");
+        mButtonReset.setVisibility(View.VISIBLE);
+    }
+
+    private void resetTimer() {
+        mTimeLeftInMillis = START_TIME_IN_MILLIS;
+        updateCountDownText();
+        mButtonReset.setVisibility(View.INVISIBLE);
+        mButtonStartPause.setVisibility(View.VISIBLE);
+    }
+
+    private void updateCountDownText() {
+        int minutes = (int) (3*(mTimeLeftInMillis / 1000) / 60);
+        int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
+
+        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+
+        mTextViewCountDown.setText(timeLeftFormatted);
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public void onClick(View v) {
+        switch (layoutView.getId()) {
+            case R.id.button_start_pause:
+                if (mTimerRunning) {
+                    pauseTimer();
+                } else {
+                    startTimer();
+                }
+                break;
+            case R.id.button_reset:
+                resetTimer();
+                break;
+
         }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_three_min, container, false);
+        updateCountDownText();
     }
 }
