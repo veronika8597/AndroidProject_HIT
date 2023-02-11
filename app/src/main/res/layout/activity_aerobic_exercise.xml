@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AerobicExerciseListUI.AerobicExerciseActivity">
+    tools:context=".AerobicExerciseListUI.AerobicExerciseActivity"
+    android:id="@+id/exercisePage">
 
 
     <View
         android:id="@+id/view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_1"/>
 
     <TextView
         android:id="@+id/Ex_Title"
@@ -18,6 +20,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/comfortaa_light"
         android:text="@string/aerobic_exercises"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/Ex_GIF"
@@ -27,26 +30,64 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/Ex_GIF"
-        android:layout_width="451dp"
-        android:layout_height="291dp"
+        android:layout_width="432dp"
+        android:layout_height="315dp"
         android:src="@drawable/run_exercise_illustration"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.175" />
+        app:layout_constraintVertical_bias="0.151" />
 
     <TextView
         android:id="@+id/Ex_Description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="389dp"
+        android:layout_height="64dp"
         android:fontFamily="@font/comfortaa_light"
         android:text="@string/Description_Of_AerobicEx_txt"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Ex_GIF" />
+
+    <Button
+        android:id="@+id/button_10min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_button"
+        android:text="10 minutes"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Ex_Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Ex_Description" />
+
+    <Button
+        android:id="@+id/button_20min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_button"
+        android:text="20 minutes"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/button_30min"
+        app:layout_constraintStart_toEndOf="@+id/button_10min"
+        app:layout_constraintTop_toBottomOf="@+id/Ex_Description" />
+
+    <Button
+        android:id="@+id/button_30min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_button"
+        android:text="30 minutes"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Ex_Title"
+        app:layout_constraintTop_toBottomOf="@+id/Ex_Description" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

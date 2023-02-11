@@ -30,6 +30,9 @@
             android:name=".AerobicExerciseListUI.AerobicExerciseActivity"
             android:exported="false" />
         <activity
+            android:name=".AerobicExerciseListUI.TimerFragments.TenMinFragment"
+            android:exported="false" />
+        <activity
             android:name=".Logins.AdminLoginActivity"
             android:exported="false" />
         <activity
