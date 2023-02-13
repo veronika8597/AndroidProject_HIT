@@ -21,11 +21,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.androidproject_hit.AdminMainActivity;
+import com.example.androidproject_hit.AdminUI.AdminMainActivity;
 import com.example.androidproject_hit.AdminRegisterActivity;
 import com.example.androidproject_hit.R;
-import com.example.androidproject_hit.RegisterActivity;
-import com.example.androidproject_hit.TrainingType;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -85,9 +83,16 @@ public class AdminLoginActivity extends AppCompatActivity {
         AdminLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminLoginActivity.this, AdminMainActivity.class);
+                if(Admin.getIsAdmin() == 1) {
+                    Intent intent = new Intent(AdminLoginActivity.this, AdminMainActivity.class);
 
-                startActivity(intent);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Toast.makeText( AdminLoginActivity.this,
+                            "You're not an Admin please return to the User Login", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

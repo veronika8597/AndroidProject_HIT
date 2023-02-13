@@ -1,20 +1,14 @@
-package com.example.androidproject_hit;
-
-import static android.content.ContentValues.TAG;
+package com.example.androidproject_hit.AdminUI;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.MutableLiveData;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 
-import com.google.firebase.database.ChildEventListener;
+import com.example.androidproject_hit.AdminUI.MyAdapter;
+import com.example.androidproject_hit.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,44 +16,45 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import Users.Customer;
 
 public class AdminMainActivity extends AppCompatActivity {
 
-    ListView listView;
-    FirebaseDatabase database;
-    DatabaseReference reference;
-    ArrayList<String> list;
-    ArrayAdapter <String> adapter;
 
-    Customer customer;
+    RecyclerView recyclerView;
+    FirebaseDatabase database;
+    MyAdapter myAdapter;
+    ArrayList<Customer> list;
+    DatabaseReference reference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_main);
 
-        customer = new Customer();
-        listView = (ListView) findViewById(R.id.listView);
-
+        recyclerView = findViewById(R.id.userInfoList);
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Customer");
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
-        adapter = new ArrayAdapter<String>(this, R.layout.user_info, R.id.userInfo, list);
+        myAdapter = new MyAdapter(this, list);
+        recyclerView.setAdapter(myAdapter);
 
-        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot ds:snapshot.getChildren())
-                {
-                    customer = ds.getValue(Customer.class);
-                    list.add(customer.getF_name()+" "+customer.getL_name()+" "+customer.getSex());
-                }
+                //list.clear();
 
-                listView.setAdapter(adapter);
+                for(DataSnapshot dataSnapshot : snapshot.getChildren())
+                {
+                    Customer customer = dataSnapshot.getValue(Customer.class);
+                    list.add(customer);
+                }
+                myAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -68,8 +63,7 @@ public class AdminMainActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
+
 }
 

@@ -51,8 +51,6 @@ public class AdminRegisterActivity extends AppCompatActivity {
         Register = findViewById(R.id.AdminReg_RegisterButton);
         adminAuth = FirebaseAuth.getInstance();
 
-
-
     }
 
     public View ButtonRegister(View view) {

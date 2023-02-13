@@ -7,7 +7,7 @@ public class Admin {
     private String f_name;
     private String l_name;
     private String password;
-    int isAdmin;
+    static int isAdmin;
     private String token;
 
     public Admin(String email, String f_name, String l_name, String password, String token, int isAdmin) {
@@ -16,7 +16,7 @@ public class Admin {
         this.l_name = l_name;
         this.password = password;
         this.token = token;
-        this.isAdmin = isAdmin;
+        Admin.isAdmin = isAdmin;
     }
 
     public String getEmail() {
@@ -59,7 +59,7 @@ public class Admin {
         this.token = "Admin123";
     }
 
-    public int getIsAdmin() {
+    public static int getIsAdmin() {
         return isAdmin;
     }
 

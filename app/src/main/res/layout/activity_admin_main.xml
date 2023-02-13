@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_list"
     android:orientation="vertical"
-    tools:context=".AdminMainActivity">
+    tools:context=".AdminUI.AdminMainActivity">
 
     <ImageView
         android:id="@+id/Logo"
@@ -35,8 +35,8 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
-    <ListView
-        android:id="@+id/listView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userInfoList"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

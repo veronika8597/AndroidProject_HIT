@@ -14,6 +14,7 @@ public class TrainingType extends AppCompatActivity {
 
     Button Anaerobic;
     Button Aerobic;
+    Button Nutrition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class TrainingType extends AppCompatActivity {
 
         Anaerobic = findViewById(R.id.buttonAnaerobic);
         Aerobic = findViewById(R.id.buttonAerobic);
+        Nutrition = findViewById(R.id.buttonNutrition);
 
 
         Anaerobic.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +38,14 @@ public class TrainingType extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TrainingType.this, MainAerobicExerciseTypeListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Nutrition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TrainingType.this, NutritionMainActivity.class);
                 startActivity(intent);
             }
         });

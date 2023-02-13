@@ -77,8 +77,11 @@
             Lift your shoulders, squeeze your abdominal muscles and hold for 1 to 2 seconds. Slowly return to the starting position and repeat until set is complete.</item>
         <item>Stand straight with your feet shoulder-width apart. Press your hips back and squat. Stand up and repeat this movement until the set is complete.</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="txt_lable">Lable</string>
+    <string name="txt_source">source</string>
+    <string name="txt_yield">yield</string>
+    <string name="txt_calories">calories</string>
+    <string name="txt_weight">totalWeight</string>
 
 </resources>
